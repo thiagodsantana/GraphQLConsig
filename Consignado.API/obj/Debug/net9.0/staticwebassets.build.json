@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Hash": "nPJKTgSU7k2giLpZPUVi+h2TUl6U/HLjz0HWJ7T761Q=",
+  "Source": "Consignado.API",
+  "BasePath": "_content/Consignado.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL\\ConsignadoGraphQL.csproj",
+      "Version": 2,
+      "Source": "ConsignadoGraphQL",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

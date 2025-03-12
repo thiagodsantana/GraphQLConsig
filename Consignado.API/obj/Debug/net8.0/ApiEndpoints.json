@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "Consignado.API.Controllers.BeneficiariosController",
+    "Method": "GetBeneficiarios",
+    "RelativePath": "api/Beneficiarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

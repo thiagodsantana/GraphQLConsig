@@ -1,0 +1,12 @@
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\bin\Debug\net8.0\ConsignadoGraphQL.ServiceDefaults.deps.json
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\bin\Debug\net8.0\ConsignadoGraphQL.ServiceDefaults.dll
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\bin\Debug\net8.0\ConsignadoGraphQL.ServiceDefaults.pdb
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\obj\Debug\net8.0\ConsignadoGraphQL.ServiceDefaults.csproj.AssemblyReference.cache
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\obj\Debug\net8.0\ConsignadoGraphQL.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\obj\Debug\net8.0\ConsignadoGraphQL.ServiceDefaults.AssemblyInfoInputs.cache
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\obj\Debug\net8.0\ConsignadoGraphQL.ServiceDefaults.AssemblyInfo.cs
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\obj\Debug\net8.0\ConsignadoGraphQL.ServiceDefaults.csproj.CoreCompileInputs.cache
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\obj\Debug\net8.0\ConsignadoGraphQL.ServiceDefaults.dll
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\obj\Debug\net8.0\refint\ConsignadoGraphQL.ServiceDefaults.dll
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\obj\Debug\net8.0\ConsignadoGraphQL.ServiceDefaults.pdb
+C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.ServiceDefaults\obj\Debug\net8.0\ref\ConsignadoGraphQL.ServiceDefaults.dll
