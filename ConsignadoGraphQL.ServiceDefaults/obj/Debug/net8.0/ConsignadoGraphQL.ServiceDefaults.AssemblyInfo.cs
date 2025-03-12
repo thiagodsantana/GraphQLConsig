@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConsignadoGraphQL.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22ca58253dc41f1a44082b8a1aa8d23b16d71df7")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConsignadoGraphQL.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConsignadoGraphQL.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

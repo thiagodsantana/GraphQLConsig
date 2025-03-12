@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1rgnwwjEutQ=",
+  "dgSpecHash": "1KAn7kDSqkM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.Host\\ConsignadoGraphQL.Host.csproj",
+  "projectFilePath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.Host\\ConsignadoGraphQL.Host.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thiag\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\9.1.0\\aspire.dashboard.sdk.win-x64.9.1.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\aspire.hosting\\9.1.0\\aspire.hosting.9.1.0.nupkg.sha512",

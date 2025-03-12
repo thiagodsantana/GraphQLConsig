@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.Host\\ConsignadoGraphQL.Host.csproj": {}
+    "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.Host\\ConsignadoGraphQL.Host.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.Host\\ConsignadoGraphQL.Host.csproj": {
+    "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.Host\\ConsignadoGraphQL.Host.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.Host\\ConsignadoGraphQL.Host.csproj",
+        "projectUniqueName": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.Host\\ConsignadoGraphQL.Host.csproj",
         "projectName": "ConsignadoGraphQL.Host",
-        "projectPath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.Host\\ConsignadoGraphQL.Host.csproj",
+        "projectPath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.Host\\ConsignadoGraphQL.Host.csproj",
         "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.Host\\obj\\",
+        "outputPath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.Host\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

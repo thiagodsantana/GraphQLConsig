@@ -8,5 +8,5 @@ namespace Projects;
 public class ConsignadoGraphQL_Host
 {
     private ConsignadoGraphQL_Host() { }
-    public static string ProjectPath => """C:\Users\thiag\source\repos\ConsignadoGraphQL\ConsignadoGraphQL.Host""";
+    public static string ProjectPath => """C:\Users\thiag\source\repos\ConsignadoGraphQL\GraphQLConsig\ConsignadoGraphQL.Host""";
 }

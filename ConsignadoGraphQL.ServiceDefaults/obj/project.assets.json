@@ -2189,11 +2189,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.ServiceDefaults\\ConsignadoGraphQL.ServiceDefaults.csproj",
+      "projectUniqueName": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.ServiceDefaults\\ConsignadoGraphQL.ServiceDefaults.csproj",
       "projectName": "ConsignadoGraphQL.ServiceDefaults",
-      "projectPath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.ServiceDefaults\\ConsignadoGraphQL.ServiceDefaults.csproj",
+      "projectPath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.ServiceDefaults\\ConsignadoGraphQL.ServiceDefaults.csproj",
       "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.ServiceDefaults\\obj\\",
+      "outputPath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.ServiceDefaults\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

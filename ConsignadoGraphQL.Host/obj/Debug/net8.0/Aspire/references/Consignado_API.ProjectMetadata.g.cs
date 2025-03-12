@@ -7,5 +7,5 @@ namespace Projects;
 [global::System.Diagnostics.DebuggerDisplay("Type = {GetType().Name,nq}, ProjectPath = {ProjectPath}")]
 public class Consignado_API : global::Aspire.Hosting.IProjectMetadata
 {
-    public string ProjectPath => """C:\Users\thiag\source\repos\ConsignadoGraphQL\Consignado.API\Consignado.API.csproj""";
+    public string ProjectPath => """C:\Users\thiag\source\repos\ConsignadoGraphQL\GraphQLConsig\Consignado.API\Consignado.API.csproj""";
 }

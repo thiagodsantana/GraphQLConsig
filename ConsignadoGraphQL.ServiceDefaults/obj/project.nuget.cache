@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZOnvhpKSung=",
+  "dgSpecHash": "npZXmTaTtjQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.ServiceDefaults\\ConsignadoGraphQL.ServiceDefaults.csproj",
+  "projectFilePath": "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.ServiceDefaults\\ConsignadoGraphQL.ServiceDefaults.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thiag\\.nuget\\packages\\google.protobuf\\3.22.5\\google.protobuf.3.22.5.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\grpc.core.api\\2.52.0\\grpc.core.api.2.52.0.nupkg.sha512",

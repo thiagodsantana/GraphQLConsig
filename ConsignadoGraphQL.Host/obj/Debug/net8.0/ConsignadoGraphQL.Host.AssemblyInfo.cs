@@ -18,15 +18,17 @@ using System.Reflection;
     "xt\\")]
 [assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Users\\thiag\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.1.0\\tools\\e" +
     "xt\\bin\\")]
-[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.Host")]
+[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.Hos" +
+    "t")]
 [assembly: System.Reflection.AssemblyMetadata("apphostprojectname", "ConsignadoGraphQL.Host.csproj")]
 [assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Users\\thiag\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\9.1.0\\tools\\Aspire.Da" +
     "shboard.exe")]
-[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\ConsignadoGraphQL.Host\\obj\\")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "C:\\Users\\thiag\\source\\repos\\ConsignadoGraphQL\\GraphQLConsig\\ConsignadoGraphQL.Hos" +
+    "t\\obj\\")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConsignadoGraphQL.Host")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22ca58253dc41f1a44082b8a1aa8d23b16d71df7")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConsignadoGraphQL.Host")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConsignadoGraphQL.Host")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

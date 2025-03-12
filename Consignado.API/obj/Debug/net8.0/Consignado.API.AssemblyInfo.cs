@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Consignado.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e634aff8f253a3d3312f125849e45bb6cba8f2cf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22ca58253dc41f1a44082b8a1aa8d23b16d71df7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Consignado.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Consignado.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
