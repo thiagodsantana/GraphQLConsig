@@ -1,152 +1,165 @@
-# GraphQL API com HotChocolate e .NET
+# 📘 GraphQLConsig
 
-Este projeto implementa uma API GraphQL usando **HotChocolate** em .NET para gerenciar beneficiários, benefícios e contratos.
+> Projeto de exemplo de **API GraphQL** utilizando HotChocolate em .NET, com foco em gerenciamento de beneficiários, benefícios e contratos de empréstimo consignado.
 
-## 🚀 Tecnologias Utilizadas
-- **.NET 7/8**
-- **HotChocolate** (Biblioteca GraphQL para .NET)
-- **Repository** (Banco de dados SQL Server usando migrations)
-- **Aspire** (Orquestração de aplicações distribuídas)
-
----
-
-## 📌 Configuração
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-repositorio.git
-   cd seu-repositorio
-   ```
-2. Instale as dependências necessárias:
-   ```bash
-   dotnet restore
-   ```
-3. Execute o projeto:
-   ```bash
-   dotnet run
-   ```
-4. Acesse o **Banana Cake Pop** (Interface GraphQL) em:
-   ```
-   http://localhost:5000/graphql
-   ```
+![.NET](https://img.shields.io/badge/.NET-8.0-blueviolet?logo=dotnet)
+![C#](https://img.shields.io/badge/C%23-100%25-blue?logo=csharp)
+![Status](https://img.shields.io/badge/Status-Ativo-success)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 ---
 
-## 📡 Exemplo de Query (Consultar Beneficiários)
+## 📖 Visão Geral
 
-```graphql
-query{
-    beneficiarios{
-        cpf
-        nome,        
-        beneficios{
-            tipo,
-            valor,
-            contratos{
-                parcelas,
-                valorTotal,
-                taxaJuros
-            }
-        }
-    }
-}
+O **GraphQLConsig** tem como objetivo:
+
+* Demonstrar como construir uma API GraphQL no .NET usando HotChocolate.  
+* Mostrar casos de uso de **queries**, **mutations** e **subscriptions**.  
+* Servir como base para projetos que precisam de APIs performáticas e bem estruturadas.  
+* Exibir relações entre entidades como **Beneficiários**, **Benefícios** e **Contratos**.
+
+Ideal para desenvolvedores que desejam:
+
+* Entender como estruturar um projeto GraphQL no .NET  
+* Aprender a configurar queries, mutations e subscriptions  
+* Ter um template pronto para APIs corporativas com HotChocolate  
+
+---
+
+## 🧩 Estrutura do Projeto
+
+```mermaid
+graph TD
+    A[GraphQLConsig]
+    B[Consignado.API]
+    C[Consignado.Domain]
+    D[Consignado.Infrastructure]
+    E[Consignado.GraphQL]
+    F[Program.cs]
+    G[appsettings.json]
+
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+    A --> F
+    A --> G
+````
+
+**Descrição das pastas:**
+
+* `Consignado.API` → Projeto principal da API, com controllers e configuração GraphQL
+* `Consignado.Domain` → Modelos e entidades de negócio (Beneficiário, Benefício, Contrato)
+* `Consignado.Infrastructure` → Contexto do banco de dados, repositórios e migrations
+* `Consignado.GraphQL` → Schemas, queries, mutations, subscriptions e resolvers
+* `Program.cs` → Configuração da aplicação e startup da API
+* `appsettings.json` → Configuração de conexão com banco e variáveis de ambiente
+
+---
+
+## 🧪 Tecnologias Utilizadas
+
+* **.NET 8** — Plataforma moderna e performática para backend
+* **C#** — Linguagem principal
+* **HotChocolate** — Framework GraphQL para .NET
+* **SQL Server** — Banco de dados relacional
+* **Entity Framework Core** — ORM para acesso e migrations
+* **Mermaid** — Diagramas para visualização da estrutura
+
+---
+
+## ⚙️ Pré‑requisitos
+
+Antes de executar o projeto localmente, garanta que você tenha:
+
+* ✅ [Visual Studio 2022](https://visualstudio.microsoft.com/) ou [VS Code](https://code.visualstudio.com/)
+* ✅ [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+* ✅ SQL Server ou outra instância compatível
+* ✅ Conhecimentos básicos de C# e GraphQL
+
+---
+
+## 🚀 Como Executar Localmente
+
+1. Clone este repositório:
+
+```bash
+git clone https://github.com/thiagodsantana/GraphQLConsig.git
+cd GraphQLConsig
 ```
 
-### 🔹 Resposta Esperada
+2. Restaure dependências:
+
+```bash
+dotnet restore
+```
+
+3. Configure a string de conexão em `appsettings.json`:
+
 ```json
-{
-  "data": {
-    "beneficiarios": [
-      {
-        "cpf": "12345678901",
-        "nome": "João Silva",
-        "beneficios": [
-          {
-            "tipo": "Aposentadoria",
-            "valor": 3000,
-            "contratos": [
-              {
-                "parcelas": 24,
-                "valorTotal": 15000,
-                "taxaJuros": 2.5
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+"ConnectionStrings": {
+  "DefaultConnection": "Server=localhost;Database=GraphQLConsigDB;Trusted_Connection=True;"
 }
+```
+
+4. Execute migrations:
+
+```bash
+dotnet ef database update --project Consignado.API
+```
+
+5. Execute a aplicação:
+
+```bash
+dotnet run --project Consignado.API
+```
+
+6. Acesse o **playground GraphQL**:
+
+```
+http://localhost:5000/graphql
 ```
 
 ---
 
-## 📝 Exemplo de Consulta por ID Beneficiário
+## 💡 Objetivo Educacional
 
-```query {
-  beneficiarioById(id: 1) {
-    id
-    nome
-    cpf
-    beneficios {
-      id
-      tipo
-      valor
-    }
-  }
-}
+Este projeto serve para:
 
+* Fornecer uma base prática de estudo sobre GraphQL com .NET
+* Servir como template para times que desejam adotar GraphQL
+* Facilitar workshops ou treinamentos sobre arquitetura de APIs distribuídas e design de schemas eficientes
 
-```
-
-### 🔹 Resposta Esperada
-```{
-  "data": {
-    "beneficiarioById": {
-      "id": 1,
-      "nome": "João Silva",
-      "cpf": "12345678901",
-      "beneficios": [
-        {
-          "id": 1,
-          "tipo": "Aposentadoria",
-          "valor": 1200
-        }
-      ]
-    }
-  }
-}
-```
 ---
 
-## 📝 Exemplo de Mutation (Adicionar Beneficiário)
+## 📊 Diagrama de Relacionamento de Entidades
+
+```mermaid
+graph LR
+    Beneficiario -->|possui| Beneficio
+    Beneficio -->|gera| Contrato
+    Contrato -->|pertence a| Beneficiario
+```
+
+Este diagrama mostra a relação entre **Beneficiários**, **Benefícios** e **Contratos**.
+
+---
+
+## 🧪 Exemplos de Queries, Mutations e Subscriptions
+
+### Query – Consultar beneficiários
 
 ```graphql
-mutation {
-  addBeneficiario(input: {
-    nome: "Carlos Mendes", 
-    cpf: "12345678910",
-    beneficios: [
-      {
-        tipo: "Aposentadoria",
-        valor: 4000,
-        contratos: [
-          { valorTotal: 20000, parcelas: 48, taxaJuros: 2.8 }
-        ]
-      }
-    ]
-  }) {
-    id
-    nome
+query {
+  beneficiarios {
     cpf
+    nome
     beneficios {
-      id
       tipo
       valor
       contratos {
-        id
-        valorTotal
         parcelas
+        valorTotal
         taxaJuros
       }
     }
@@ -154,56 +167,83 @@ mutation {
 }
 ```
 
-### 🔹 Resposta Esperada
-```json
-{
-  "data": {
-    "addBeneficiario": {
-      "id": 3,
-      "nome": "Carlos Mendes",
-      "cpf": "12345678910",
-      "beneficios": [
-        {
-          "id": 5,
-          "tipo": "Aposentadoria",
-          "valor": 4000,
-          "contratos": [
-            {
-              "id": 7,
-              "valorTotal": 20000,
-              "parcelas": 48,
-              "taxaJuros": 2.8
-            }
-          ]
-        }
-      ]
-    }
-  }
-}
-```
+### Mutation – Criar beneficiário
 
-
-## 📝 Exemplo de Consumo Subscription
-
-```subscription {
-  onBeneficiarioAdded {
+```graphql
+mutation {
+  criarBeneficiario(input: {
+    nome: "Maria Silva",
+    cpf: "98765432100"
+  }) {
     id
     nome
     cpf
   }
 }
-
 ```
 
-### 🔹 Resposta Esperada
-```{
-  "data": {
-    "onBeneficiarioAdded": {
-      "id": 4,
-      "nome": "Carlos Mendes",
-      "cpf": "12345678910"
+### Subscription – Notificação de novo contrato
+
+```graphql
+subscription {
+  novoContrato {
+    id
+    valorTotal
+    parcelas
+    beneficiario {
+      nome
+      cpf
     }
   }
 }
 ```
 
+---
+
+## 📚 Boas Práticas
+
+* Separe claramente **queries, mutations e subscriptions**
+* Evite retornar grandes volumes de dados sem paginação
+* Utilize DTOs para separar modelos de banco e GraphQL
+* Monitore performance e logging das queries em produção
+* Documente schemas e resolvers para facilitar manutenção
+
+---
+
+## 🤝 Contribuindo
+
+1. Faça um fork do repositório
+2. Crie uma branch de feature:
+
+```bash
+git checkout -b feature/nova-funcionalidade
+```
+
+3. Adicione melhorias ou exemplos
+4. Faça commit das alterações:
+
+```bash
+git commit -m "Adiciona funcionalidade X ao GraphQLConsig"
+```
+
+5. Envie para o fork:
+
+```bash
+git push origin feature/nova-funcionalidade
+```
+
+6. Abra um Pull Request
+
+---
+
+## 🪪 Licença
+
+Este projeto está sob a **Licença MIT** — livre para uso, estudo e modificação.
+
+---
+
+## ✉️ Contato
+
+**Autor:** [Thiago D. Santana](https://github.com/thiagodsantana)
+**LinkedIn:** [linkedin.com/in/thiagodsantana](https://linkedin.com/in/thiagodsantana)
+**E-mail:** [thiago.darley@gmail.com](mailto:thiago.darley@gmail.com)
