@@ -1,6 +1,6 @@
-# 📘 GraphQLConsig
+# 📘 CsharpAspirePubSub
 
-> Projeto de exemplo de **API GraphQL** utilizando HotChocolate em .NET, com foco em gerenciamento de beneficiários, benefícios e contratos de empréstimo consignado.
+> Solução de solicitação e processamento de empréstimos utilizando **Google Cloud Pub/Sub** e **.NET Aspire**.
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-blueviolet?logo=dotnet)
 ![C#](https://img.shields.io/badge/C%23-100%25-blue?logo=csharp)
@@ -11,18 +11,17 @@
 
 ## 📖 Visão Geral
 
-O **GraphQLConsig** tem como objetivo:
+O **CsharpAspirePubSub** tem como objetivo:
 
-* Demonstrar como construir uma API GraphQL no .NET usando HotChocolate.  
-* Mostrar casos de uso de **queries**, **mutations** e **subscriptions**.  
-* Servir como base para projetos que precisam de APIs performáticas e bem estruturadas.  
-* Exibir relações entre entidades como **Beneficiários**, **Benefícios** e **Contratos**.
+* Demonstrar como implementar um **padrão Publish‑Subscribe** em .NET para processamento de empréstimos.  
+* Utilizar o **Google Cloud Pub/Sub** como mecanismo de mensageria para comunicação assíncrona entre serviços.  
+* Servir como referência para arquiteturas distribuídas de microsserviços em .NET Aspire.  
 
 Ideal para desenvolvedores que desejam:
 
-* Entender como estruturar um projeto GraphQL no .NET  
-* Aprender a configurar queries, mutations e subscriptions  
-* Ter um template pronto para APIs corporativas com HotChocolate  
+* Aprender a integrar .NET com Google Pub/Sub.  
+* Implementar sistemas de processamento assíncrono de tarefas (ex: solicitações de empréstimo).  
+* Ter um template de projeto de mensageria robusto e escalável.
 
 ---
 
@@ -30,13 +29,13 @@ Ideal para desenvolvedores que desejam:
 
 ```mermaid
 graph TD
-    A[GraphQLConsig]
-    B[Consignado.API]
-    C[Consignado.Domain]
-    D[Consignado.Infrastructure]
-    E[Consignado.GraphQL]
-    F[Program.cs]
-    G[appsettings.json]
+    A[CsharpAspirePubSub]
+    B[Publisher]
+    C[Subscriber]
+    D[Shared]
+    E[Program.cs - Publisher]
+    F[Program.cs - Subscriber]
+    G[Config]
 
     A --> B
     A --> C
@@ -48,23 +47,21 @@ graph TD
 
 **Descrição das pastas:**
 
-* `Consignado.API` → Projeto principal da API, com controllers e configuração GraphQL
-* `Consignado.Domain` → Modelos e entidades de negócio (Beneficiário, Benefício, Contrato)
-* `Consignado.Infrastructure` → Contexto do banco de dados, repositórios e migrations
-* `Consignado.GraphQL` → Schemas, queries, mutations, subscriptions e resolvers
-* `Program.cs` → Configuração da aplicação e startup da API
-* `appsettings.json` → Configuração de conexão com banco e variáveis de ambiente
+* `Publisher` → Serviço que publica mensagens de solicitação de empréstimos no tópico Pub/Sub
+* `Subscriber` → Serviço que consome mensagens de empréstimo e processa o workflow
+* `Shared` → Contratos, DTOs e utilitários compartilhados entre Publisher e Subscriber
+* `Program.cs` → Arquivos de inicialização e configuração dos serviços
+* `Config` → Configurações de conexão com Google Pub/Sub e variáveis de ambiente
 
 ---
 
 ## 🧪 Tecnologias Utilizadas
 
-* **.NET 8** — Plataforma moderna e performática para backend
+* **.NET 8 / .NET Aspire** — Backend moderno e performático
 * **C#** — Linguagem principal
-* **HotChocolate** — Framework GraphQL para .NET
-* **SQL Server** — Banco de dados relacional
-* **Entity Framework Core** — ORM para acesso e migrations
-* **Mermaid** — Diagramas para visualização da estrutura
+* **Google Cloud Pub/Sub** — Mensageria assíncrona escalável
+* **Entity Framework Core** (opcional, se houver banco) — Persistência de dados
+* **Mermaid** — Diagramas para visualização da arquitetura
 
 ---
 
@@ -72,10 +69,10 @@ graph TD
 
 Antes de executar o projeto localmente, garanta que você tenha:
 
-* ✅ [Visual Studio 2022](https://visualstudio.microsoft.com/) ou [VS Code](https://code.visualstudio.com/)
-* ✅ [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-* ✅ SQL Server ou outra instância compatível
-* ✅ Conhecimentos básicos de C# e GraphQL
+* ✅ [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+* ✅ Conta e projeto no **Google Cloud** com Pub/Sub habilitado
+* ✅ Chave de autenticação JSON do serviço do Google Cloud
+* ✅ Visual Studio 2022 ou VS Code
 
 ---
 
@@ -84,41 +81,35 @@ Antes de executar o projeto localmente, garanta que você tenha:
 1. Clone este repositório:
 
 ```bash
-git clone https://github.com/thiagodsantana/GraphQLConsig.git
-cd GraphQLConsig
+git clone https://github.com/thiagodsantana/CsharpAspirePubSub.git
+cd CsharpAspirePubSub
 ```
 
-2. Restaure dependências:
+2. Configure as credenciais do Google Cloud:
+
+```bash
+set GOOGLE_APPLICATION_CREDENTIALS=path\to\service-account.json
+```
+
+3. Restaure dependências:
 
 ```bash
 dotnet restore
 ```
 
-3. Configure a string de conexão em `appsettings.json`:
-
-```json
-"ConnectionStrings": {
-  "DefaultConnection": "Server=localhost;Database=GraphQLConsigDB;Trusted_Connection=True;"
-}
-```
-
-4. Execute migrations:
+4. Execute o **Subscriber** (primeiro para receber mensagens):
 
 ```bash
-dotnet ef database update --project Consignado.API
+dotnet run --project Subscriber
 ```
 
-5. Execute a aplicação:
+5. Execute o **Publisher** para enviar solicitações de empréstimo:
 
 ```bash
-dotnet run --project Consignado.API
+dotnet run --project Publisher
 ```
 
-6. Acesse o **playground GraphQL**:
-
-```
-http://localhost:5000/graphql
-```
+6. Observe os logs no Subscriber para verificar o processamento das mensagens.
 
 ---
 
@@ -126,87 +117,58 @@ http://localhost:5000/graphql
 
 Este projeto serve para:
 
-* Fornecer uma base prática de estudo sobre GraphQL com .NET
-* Servir como template para times que desejam adotar GraphQL
-* Facilitar workshops ou treinamentos sobre arquitetura de APIs distribuídas e design de schemas eficientes
+* Fornecer uma base prática sobre **mensageria assíncrona** com Google Pub/Sub e .NET
+* Demonstrar um padrão **Publish-Subscribe** aplicado a processamento de empréstimos
+* Servir como template para sistemas distribuídos e escaláveis
 
 ---
 
-## 📊 Diagrama de Relacionamento de Entidades
+## 📊 Diagrama de Fluxo de Mensagens
 
 ```mermaid
 graph LR
-    Beneficiario -->|possui| Beneficio
-    Beneficio -->|gera| Contrato
-    Contrato -->|pertence a| Beneficiario
+    Solicitacao[Solicitação de Empréstimo] -->|Publica| Tópico[Google Pub/Sub Tópico]
+    Tópico -->|Recebe| Subscriber[Serviço de Processamento]
+    Subscriber -->|Valida| Validacao[Validação de Empréstimo]
+    Subscriber -->|Atualiza| Banco[Banco de Dados]
+    Subscriber -->|Notifica| Cliente[Cliente]
 ```
 
-Este diagrama mostra a relação entre **Beneficiários**, **Benefícios** e **Contratos**.
+Este diagrama mostra o fluxo completo: da publicação da solicitação até a validação, persistência e notificação.
 
 ---
 
-## 🧪 Exemplos de Queries, Mutations e Subscriptions
+## 🧪 Exemplos de Uso
 
-### Query – Consultar beneficiários
+### Publicar uma solicitação de empréstimo
 
-```graphql
-query {
-  beneficiarios {
-    cpf
-    nome
-    beneficios {
-      tipo
-      valor
-      contratos {
-        parcelas
-        valorTotal
-        taxaJuros
-      }
-    }
-  }
-}
+```csharp
+var emprestimo = new SolicitacaoEmprestimo {
+    ClienteId = "12345",
+    Valor = 5000,
+    Parcelas = 12
+};
+
+await publisher.PublishAsync(emprestimo);
 ```
 
-### Mutation – Criar beneficiário
+### Processar mensagens recebidas
 
-```graphql
-mutation {
-  criarBeneficiario(input: {
-    nome: "Maria Silva",
-    cpf: "98765432100"
-  }) {
-    id
-    nome
-    cpf
-  }
-}
-```
-
-### Subscription – Notificação de novo contrato
-
-```graphql
-subscription {
-  novoContrato {
-    id
-    valorTotal
-    parcelas
-    beneficiario {
-      nome
-      cpf
-    }
-  }
-}
+```csharp
+subscriber.Subscribe<SolicitacaoEmprestimo>(mensagem => {
+    Console.WriteLine($"Processando empréstimo do cliente {mensagem.ClienteId}");
+    // validação, persistência e notificações
+});
 ```
 
 ---
 
 ## 📚 Boas Práticas
 
-* Separe claramente **queries, mutations e subscriptions**
-* Evite retornar grandes volumes de dados sem paginação
-* Utilize DTOs para separar modelos de banco e GraphQL
-* Monitore performance e logging das queries em produção
-* Documente schemas e resolvers para facilitar manutenção
+* Use tópicos e assinaturas separados por domínio ou serviço
+* Evite processamentos longos dentro do handler; prefira filas internas ou jobs
+* Monitore métricas de Pub/Sub e logs de processamento
+* Utilize DTOs para padronizar mensagens entre Publisher e Subscriber
 
 ---
 
@@ -223,7 +185,7 @@ git checkout -b feature/nova-funcionalidade
 4. Faça commit das alterações:
 
 ```bash
-git commit -m "Adiciona funcionalidade X ao GraphQLConsig"
+git commit -m "Adiciona feature X ao CsharpAspirePubSub"
 ```
 
 5. Envie para o fork:
